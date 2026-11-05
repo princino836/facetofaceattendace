@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CS Group B Attendance</title><link rel="stylesheet" href="style.css">
+</head><body>
+<header><h1>CS GROUP B</h1><p>Attendance with 100 m location verification</p></header>
+<main>
+<section class="panel" id="admin">
+<h2>Admin</h2><label>Admin password</label><input id="password" type="password" placeholder="Set/change password in script.js">
+<button id="login">Admin login</button>
+<div id="adminTools" hidden>
+<p id="adminStatus">Attendance closed</p><p class="timer" id="timer">05:00</p>
+<button id="start">Start 5-minute attendance & share location</button>
+<button class="secondary" id="stop">Stop attendance</button>
+<button class="secondary" id="export">Export CSV</button>
+<p class="hint">Keep this page open during the attendance session. GPS requires HTTPS and permission.</p>
+</div></section>
+<section class="panel"><h2>Student check-in</h2><p id="sessionStatus">Attendance is closed.</p>
+<form id="form">
+<label>Full name</label><input id="name" required autocomplete="name" placeholder="Your full name">
+<label>Index number</label><input id="index" required placeholder="e.g. 123456789">
+<button id="submit" disabled>Verify location & submit</button>
+</form><p id="feedback" role="status"></p>
+<p class="hint">Location must be enabled. Your device location is used to check whether you are within 100 metres of the admin.</p></section>
+<section class="panel"><h2>Attendance list (this device)</h2><p id="count">0 students</p><div class="tablewrap"><table><thead><tr><th>#</th><th>Name</th><th>Index</th><th>Time</th><th>Distance</th></tr></thead><tbody id="rows"></tbody></table></div></section>
+</main><footer>CS Group B • Attendance</footer><script src="script.js"></script></body></html>
